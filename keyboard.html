@@ -1,0 +1,81 @@
+<!--Sedona Thomas-->
+<!--keyboard.html: uses keyboard as a virtual piano -->
+
+<!DOCTYPE html>
+<html> 
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Keyboard</title>
+        <style>
+            .main 
+            {
+                background-color: #FFFFFF;
+                padding: 10px;
+            }
+            .center 
+            {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            body 
+            {
+                width: 40%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head> 
+
+    <body bgcolor="#FFFFFF" align="center">
+
+        <div class="main">
+
+            <h2 align="center">
+                <font size="6" color="black" face="TimesNewRoman">Keyboard</font>
+            </h2>
+            
+            <font size="3" color="black" face="TimesNewRoman"> 
+                <p>Click the letter keys to play the keyboard.</p>
+                
+                <p>Choose from the following modes:</p>
+                    <button id="single">Single</button>
+                    <button id="additive">Additive</button>
+                    <button id="am">AM</button>
+                    <button id="fm">FM</button>
+
+                <p>Choose from the following waveforms:</p>
+                    <button id="sine">Sine</button>
+                    <button id="sawtooth">Sawtooth</button>
+                    <button id="square">Square</button>
+                    <button id="triangle">Triangle</button>
+                
+                <p>Turn on and off LFO:</p>
+                    <button id="lfoOn">LFO On</button>
+                    <button id="lfoOff">LFO Off</button>
+                
+                <p>Control LFO Frequency</p>
+                    <input id="lfoFreq" type="range" min=1 max=10 value=5 oninput="updateLfo(this.value)"></input>
+                
+                <p>Control number of partials (for additive)</p>
+                    <input id="numberOfPartials" type="range" min=1 max=10 value=5 oninput="updatePartialNum(this.value)"></input>
+
+                <p>Control partial distance (for additive)</p>
+                    <input id="partialDistance" type="range" min=1 max=100 value=15 oninput="updatePartialDistance(this.value)"></input>
+
+                <p>Control modulator frequency (for AM and FM)</p>
+                    <input id="modulatorFreqency" type="range" min=1 max=1000 value=100 oninput="updateFreq(this.value)"></input>
+
+                <p>Control index of modulation (for FM)</p>
+                    <input id="modulationIndex" type="range" min=1 max=1000 value=100 oninput="updateIndex(this.value)"></input>
+                
+            </font>
+        
+        </div>
+
+    </body>
+
+    <script src="keyboard.js"> </script>
+
+</html>
+
